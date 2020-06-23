@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Books;
+use App\BooksCollection;
+use App\GenreCategory;
 
 class BooksController extends Controller
 {
+
     //index controller
     public function index() {
 
@@ -19,7 +22,7 @@ class BooksController extends Controller
      //show controller
      public function show($id) {
         //query the db for a record with the books id
-        $book = Books::findOrfail($id);
+        $book = Books::findOrFail($id);
 
         return view("books.show", ["book" => $book]);
      }
@@ -30,14 +33,40 @@ class BooksController extends Controller
 
      public function store() {
          //save book records to the DB
-         $book = new book();
+         $books = new Books();
 
-         $book->name = request("name");
-         $book->genre = request("name");
-         $book->title = request("name");
+         $books->name = request("name");
+         $books->genre = request("genre");
+         $books->title = request("title");
 
-         $book->save();
+         $books->save();
         
-         return redirect("/")->with("message", "Thanks for your order");
+         return redirect("/books/getbooks")->with("message", "Thanks for your order");
+     } 
+
+      //get data from DB
+   /*  public function getbooks($id){
+    $bookcollection = BooksCollection::findOrFail($id);
+    return view('books.getbooks',['books_collection'=> $bookcollection]); 
+    } */
+
+    //get data from DB and display in view dropdown
+   /*  public function retrieve(){
+        $books_genre = GenreCategory::all();
+        return view("/welcome",["genre_categories" => $books_genre]);
+    } */
+
+    //retrieve image from db
+   /*  public function get() {
+        $bookcollection = BooksCollection::all();
+        return view("/welcome", ["books_collection" => $bookcollection]);
+    } */
+ 
+     public function destroy($id) {
+        //delete a record from the DB
+        $book = Books::findOrFail($id);
+        $book -> delete();
+
+        return redirect("/books");
      }
 }

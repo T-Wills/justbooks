@@ -1,24 +1,19 @@
-@extends("layouts.layout")
+@extends("layouts.app")
 
 @section("content")
-<div class="flex-center position-ref full-height">
 
+<div class="wrapper book-index">
+    <h1>Book orders</h1>
+    @foreach($books as $book)
+        <div class="book-item">
+            <!--  <div class="pic"> -->
+            <img src="/img/bookpic.jpg" alt="book icon">
+            <!-- </div> -->
+            <h4>
+                <a href="/books/{{ $book->id }}">{{ $book -> name }}</a>
+            </h4>
+        </div>
+    @endforeach
 </div>
-<div class="content">
-    <div class="title1 m-b-md">
-        List of Books
-    </div>
 
-    <div class="output">
-
-        @foreach($books as $book)
-            <div>
-
-                {{ $book -> name }} - {{ $book -> genre }} - {{ $book -> title }}
-
-            </div>
-        @endforeach
-    </div>
-</div>
-</div>
 @endsection

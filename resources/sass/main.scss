@@ -48,7 +48,6 @@ body {
     margin-right: 2%;
 }
 
-
 .title {
     font-size: 30px;
     text-transform: uppercase;
@@ -91,7 +90,7 @@ body {
 }
 
 #myLinks {
-    display: block;
+    display: none;
 }
 
 .list-group-item {
@@ -146,7 +145,6 @@ body {
     top: 70%;
     border: 1px solid gray;
     padding: 6%;
-
 } */
 
 footer {
@@ -168,33 +166,34 @@ footer {
 /* create book form */
 
 .create-book {
+    //background: #f7f7f7;
     padding: 20px;
-}
 
-.create-book label,
-.create-book select {
-    display: inline;
-}
+    label,
+    select {
+        display: inline;
+    }
 
-.create-book label {
-    margin-top: 30px;
-}
+    label {
+        margin-top: 30px;
+    }
 
-.create-book select {
-    padding: 8px;
-    width: 200px;
-}
+    select {
+        padding: 8px;
+        width: 200px;
+    }
 
-.create-book input[type="submit"] {
-    background: brown;
-    padding: 8px 20px;
-    color: #fff;
-    border: 0;
-    display: inline;
-    margin-left: 10px;
-    /* position: absolute;
-    top: 60%;
-    left: 9.4%; */
+    input[type="submit"] {
+        background: brown;
+        padding: 8px 20px;
+        color: #fff;
+        border: 0;
+        display: inline;
+        margin-left: 10px;
+        /* position: absolute;
+        top: 60%;
+        left: 9.4%; */
+    }
 }
 
 /* book index page */
@@ -202,19 +201,19 @@ footer {
 .book-details {
     background: #f7f7f7;
     padding: 20px;
-}
 
-.book-details p {
-    margin: 20px 0;
-    font-weight: bold;
-}
+    p {
+        margin: 20px 0;
+        font-weight: bold;
+    }
 
-.book-details button {
-    background: brown;
-    padding: 8px 20px;
-    color: white;
-    border: 0;
-    margin-top: 20px;
+    button {
+        background: brown;
+        padding: 8px 20px;
+        color: white;
+        border: 0;
+        margin-top: 20px;
+    }
 }
 
 a .back {
@@ -235,21 +234,21 @@ h1 {
     margin: 10px 0;
     padding: 12px;
     background: #f7f7f7;
-}
 
-.book-item img {
-    width: 60px;
-    display: inline-block;
-    border-radius: 50%;
-}
+    img {
+        width: 60px;
+        display: inline-block;
+        border-radius: 50%;
+    }
 
-.book-item h4 {
-    display: inline-block;
-    font-weight: normal;
-    margin-left: 20px;
-}
+    h4 {
+        display: inline-block;
+        font-weight: normal;
+        margin-left: 20px;
 
-.book-item h4 a {
-    color: #777;
-    text-decoration: none !important;
+        a {
+            color: #777;
+            text-decoration: none !important;
+        }
+    }
 }
